@@ -7,10 +7,6 @@ User.hasMany(Application, {
   foreignKey: "user_id",
 });
 
-User.hasMany(Interview, {
-  foreignKey: "user_id",
-});
-
 Application.belongsTo(User, {
   foreignKey: "user_id",
   onDelete: "SET NULL",
@@ -24,6 +20,10 @@ Interview.belongsTo(User, {
 Interview.belongsTo(Application, {
   foreignKey: "app_id",
   onDelete: "SET NULL",
+});
+
+User.hasMany(Interview, {
+  foreignKey: "user_id",
 });
 
 module.exports = {

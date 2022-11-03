@@ -13,13 +13,6 @@ Interview.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    app_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "application",
-        key: "id",
-      },
-    },
     int_time: {
       type: DataTypes.DATE,
       allowNull: false,
@@ -41,6 +34,13 @@ Interview.init(
       type: DataTypes.UUID,
       references: {
         model: "user",
+        key: "id",
+      },
+    },
+    app_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "application",
         key: "id",
       },
     },
