@@ -1,10 +1,10 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
-const path = require('path');
-const session = require('express-session');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const path = require("path");
+const session = require("express-session");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
-const sequelize = require('./db/connection');
+const sequelize = require("./config/connection");
 const routes = require("./routes");
 
 const PORT = process.env.PORT || 3001;
@@ -33,10 +33,10 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(routes);
 
-const force = process.env.FORCE_SYNC === 'true';
+const force = process.env.FORCE_SYNC === "true";
 
 sequelize.sync({ force }).then(() => {
   app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
   });
-})
+});
