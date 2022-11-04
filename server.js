@@ -35,8 +35,10 @@ app.use(routes);
 
 const force = process.env.FORCE_SYNC === "true";
 
-sequelize.sync({ force }).then(() => {
-  app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`);
+sequelize.query("SET FOREIGN_KEY_CHECKS = 0").then(function () {
+  sequelize.sync({ force }).then(() => {
+    app.listen(PORT, () => {
+      console.log(`Server listening on port ${PORT}`);
+    });
   });
 });
