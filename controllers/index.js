@@ -1,10 +1,7 @@
-const PageController = require('./PageController');
-const UserController = require('./UserController');
-const dashboardRoutes = require('./dashboard-routes.js');
-
+const PageController = require("./PageController");
+const UserController = require("./UserController");
 
 module.exports = {
   PageController,
   UserController,
-  dashboardRoutes,
-}
+};

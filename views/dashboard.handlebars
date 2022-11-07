@@ -3,7 +3,7 @@
 <section>
   <h2>Enter a New Job Application</h2>
 {{!-- Parsley Goes Here --}}
-  </form>
+{{> new-form}}
 </section>
 
 {{#if apps.length}}
@@ -13,7 +13,7 @@
     {{#each apps as |apps|}}
     <li>
       {{> apps-info apps}}
-      <a href="/dashboard/edit/{{application.id}}" class="edit-link">Edit post</a>
+      <a href="/dashboard/edit/{{application.id}}" class="edit-link">Edit application</a>
     </li>
     {{/each}}
   </ol>
