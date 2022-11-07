@@ -1,16 +1,17 @@
 
-//  Source = module 14
 async function newFormHandler(event) {
     event.preventDefault();
   
-    const title = document.querySelector('input[name="post-title"]').value;
-    const post_url = document.querySelector('input[name="post-url"]').value;
+   
   
     const response = await fetch(`/api/applications`, {
       method: 'POST',
       body: JSON.stringify({
-        title,
-        post_url
+        job_title,
+        company_name,
+        app_url,
+        app_status,
+        app_language
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -24,4 +25,3 @@ async function newFormHandler(event) {
     }
   }
   
-  document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
