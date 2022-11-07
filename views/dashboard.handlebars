@@ -1,1 +1,15 @@
+{{!-- Dashboard view - need to see all posts --}}
+
+<section>
 <h1 class="text-center mt-5">{{ welcomeMessage }}</h1>
+
+<ol class="post-list">
+  {{#each posts as |post|}}
+  <li>
+    {{> post-info post }}
+  </li>
+  {{/each}}
+</ol>
+
+{{!-- new post button --}}
+    <button type="button" class="new-post-btn">New post</button>
