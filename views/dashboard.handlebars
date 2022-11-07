@@ -1,3 +1,5 @@
+<h1 class="text-center mt-5">{{ welcomeMessage }}</h1>
+
 {{!-- Dashboard view - new posts + see all posts + make them clickable  --}}
 
 <section>
@@ -6,13 +8,13 @@
   </form>
 </section>
 
-{{#if apps.length}}
+{{#if applications.length}}
 <section>
   <h2>Your Applications</h2>
   <ol>
-    {{#each apps as |apps|}}
+    {{#each applications as |applications|}}
     <li>
-      {{> apps-info apps}}
+      {{> applications-info applications}}
       <a href="/dashboard/edit/{{application.id}}" class="edit-link">Edit post</a>
     </li>
     {{/each}}
