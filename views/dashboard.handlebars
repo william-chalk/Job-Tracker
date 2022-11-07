@@ -1,15 +1,23 @@
-{{!-- Dashboard view - need to see all posts --}}
+{{!-- Dashboard view - new posts + see all posts + make them clickable  --}}
 
 <section>
-<h1 class="text-center mt-5">{{ welcomeMessage }}</h1>
+  <h2>Enter a New Job Application</h2>
+{{!-- Parsley Goes Here --}}
+  </form>
+</section>
 
-<ol class="post-list">
-  {{#each posts as |post|}}
-  <li>
-    {{> post-info post }}
-  </li>
-  {{/each}}
-</ol>
+{{#if apps.length}}
+<section>
+  <h2>Your Applications</h2>
+  <ol>
+    {{#each apps as |apps|}}
+    <li>
+      {{> apps-info apps}}
+      <a href="/dashboard/edit/{{application.id}}" class="edit-link">Edit post</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
 
-{{!-- new post button --}}
-    <button type="button" class="new-post-btn">New post</button>
+<script src="/javascript/add-post.js"></script>
