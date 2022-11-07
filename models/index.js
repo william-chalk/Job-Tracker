@@ -16,6 +16,11 @@ Application.belongsTo(User, {
   onDelete: "SET NULL",
 });
 
+Application.hasMany(Interview,{
+  foreignKey: "app_id",
+  onDelete: 'SET NULL'
+});
+
 Interview.belongsTo(User, {
   foreignKey: "user_id",
   onDelete: "SET NULL",
