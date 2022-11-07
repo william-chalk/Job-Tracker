@@ -38,7 +38,7 @@ Application.init(
     },
     user_id: {
       // does this need to match from User exactly or can type be integer?
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
       references: {
         model: "user",
         key: "id",

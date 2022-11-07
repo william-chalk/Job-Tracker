@@ -11,8 +11,8 @@ class User extends Model {
 User.init(
   {
     id: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
       allowNull: false,
       primaryKey: true,
     },
@@ -56,8 +56,10 @@ User.init(
       },
     },
     sequelize,
+    timestamps: false,
+    freezeTableName: true,
     underscored: true,
-    modelName: "User",
+    modelName: "user",
   }
 );
 
