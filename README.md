@@ -41,7 +41,6 @@ Track jobs that you have applied for to be ready for upcoming interviews
 - Landen Blankinship
 - Krista Cannady
 - William Chalk
-- Habib Jah
 ```
 
 # Presentation
