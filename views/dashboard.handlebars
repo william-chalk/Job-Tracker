@@ -10,9 +10,9 @@
 <section>
   <h2>Your Applications</h2>
   <ol>
-    {{#each applications as |applications|}}
+    {{#each applications as |application|}}
     <li>
-      {{> applications-info applications}}
+      {{> applications-info application}}
       <a href="/dashboard/edit/{{application.id}}" class="edit-link">Edit application</a>
     </li>
     {{/each}}
