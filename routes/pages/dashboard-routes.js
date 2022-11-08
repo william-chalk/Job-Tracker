@@ -3,9 +3,10 @@ const { User, Application, Interview } = require("../../models");
 const isAuthenticated = require("../../middleware/isAuthenticated");
 
 router.get("/", isAuthenticated, (req, res) => {
+  console.log(req.session.id);
   Application.findAll({
     where: {
-      user_id: req.session.user_id,
+      user_id: req.session.id,
     },
     attributes: [
       "id",
@@ -16,14 +17,14 @@ router.get("/", isAuthenticated, (req, res) => {
       "app_language",
     ],
     include: [
-      {
-        model: Interview,
-        attributes: ["int_time", "int_location", "int_round", "int_comments"],
-        include: {
-          model: User,
-          attributes: ["firstName", "lastName"],
-        },
-      },
+      //   {
+      //     model: Interview,
+      //     attributes: ["int_time", "int_location", "int_round", "int_comments"],
+      //     include: {
+      //       model: User,
+      //       attributes: ["firstName", "lastName"],
+      //     },
+      //   },
       {
         model: User,
         attributes: ["firstName", "lastName"],
@@ -56,14 +57,14 @@ router.get("/:id", isAuthenticated, (req, res) => {
       "app_language",
     ],
     include: [
-      {
-        model: Interview,
-        attributes: ["int_time", "int_location", "int_round", "int_comments"],
-        include: {
-          model: User,
-          attributes: ["firstName", "lastName"],
-        },
-      },
+      //   {
+      //     model: Interview,
+      //     attributes: ["int_time", "int_location", "int_round", "int_comments"],
+      //     include: {
+      //       model: User,
+      //       attributes: ["firstName", "lastName"],
+      //     },
+      //   },
       {
         model: User,
         attributes: ["firstName", "lastName"],

@@ -2,17 +2,17 @@
 
 <section>
   <h2>Enter a New Job Application</h2>
-{{!-- Parsley Goes Here --}}
+{{!-- Parsley Goes Here (add css onclick to hide/unhide form) --}}
 {{> new-form}}
 </section>
 
-{{#if apps.length}}
+{{#if applications.length}}
 <section>
   <h2>Your Applications</h2>
   <ol>
-    {{#each apps as |apps|}}
+    {{#each applications as |applications|}}
     <li>
-      {{> apps-info apps}}
+      {{> applications-info applications}}
       <a href="/dashboard/edit/{{application.id}}" class="edit-link">Edit application</a>
     </li>
     {{/each}}
@@ -20,4 +20,4 @@
 </section>
 {{/if}}
 
-<script src="../public/javascript/add-post.js"></script>
+<script src="/javascript/add-app.js"></script>
