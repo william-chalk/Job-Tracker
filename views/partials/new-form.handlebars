@@ -19,17 +19,17 @@
   <label for="app_url">App url:</label>
   <input type="url" class="form-control" name="app_url" required="">
 
- {{!-- <label for="app_language">Language(s) (Optional):</label>
+ <label for="app_language">Language(s) (Optional):</label>
   <p>
-    JavaScript <input type="checkbox" name="languages[]" id="language1" value="JavaScript" data-parsley-mincheck="2"><br>
-    HTML <input type="checkbox" name="languages[]" id="language2" value="HTML"><br>
-    CSS <input type="checkbox" name="languages[]" id="language3" value="CSS"><br>
-    Python <input type="checkbox" name="languages[]" id="language4" value="Python"><br>
-    C# <input type="checkbox" name="languages[]" id="language5" value="C#"><br>
-    Other <input type="checkbox" name="languages[]" id="language6" value="other"><br>
+    JavaScript <input class="language-check" type="checkbox" name="languages[]" id="language1" value="JavaScript" data-parsley-mincheck="2"><br>
+    HTML <input class="language-check" type="checkbox" name="languages[]" id="language2" value="HTML"><br>
+    CSS <input class="language-check" type="checkbox" name="languages[]" id="language3" value="CSS"><br>
+    Python <input class="language-check" type="checkbox" name="languages[]" id="language4" value="Python"><br>
+    C# <input class="language-check" type="checkbox" name="languages[]" id="language5" value="C#"><br>
+    Other <input class="language-check" type="checkbox" name="languages[]" id="language6" value="other"><br>
   </p>
 
-  <p>
+  {{!-- <p>
   <label for="app_status">App Status:</label>
   <select id="app_status" required="">
     <option value="">Choose..</option>
@@ -56,4 +56,4 @@ $(function () {
 });
 </script>
 
-<script src="/javascript/add-app.js"></script>
+<script src="javascript/add-app.js"></script>

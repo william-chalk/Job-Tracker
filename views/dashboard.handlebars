@@ -1,16 +1,16 @@
 {{!-- Dashboard view - new posts + see all posts + make them clickable  --}}
-
+{{!-- {{> navbar}} --}}
 <section>
   <h2>Enter a New Job Application</h2>
 {{!-- Parsley Goes Here (add css onclick to hide/unhide form) --}}
 {{> new-form}}
 </section>
 
-{{#if applications.length}}
+{{#if application.length}}
 <section>
   <h2>Your Applications</h2>
   <ol>
-    {{#each applications as |application|}}
+    {{#each application as |application|}}
     <li>
       {{> applications-info application}}
       <a href="/dashboard/edit/{{application.id}}" class="edit-link">Edit application</a>
@@ -20,4 +20,4 @@
 </section>
 {{/if}}
 
-<script src="/javascript/add-app.js"></script>
+<script src="javascript/add-app.js"></script>

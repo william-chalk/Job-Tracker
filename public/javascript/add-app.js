@@ -1,4 +1,5 @@
-//  Source = module 14
+
+
 async function newFormHandler(event) {
   event.preventDefault();
 
@@ -7,7 +8,10 @@ async function newFormHandler(event) {
     'input[name="company_name"]'
   ).value;
   const app_url = document.querySelector('input[name="app_url"]').value;
-  // const appLanguage = document.querySelector('input[name="languages[]"]');
+  const appLanguage = document.querySelector(".language-check:checked").value;
+
+
+
   // const appStatus = document.querySelector('select[id="app_status"]').value;
 
   const response = await fetch(`api/applications`, {
@@ -16,7 +20,7 @@ async function newFormHandler(event) {
       job_title,
       company_name,
       app_url,
-      // appLanguage,
+      appLanguage,
       // appStatus,
     }),
     headers: {
