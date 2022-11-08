@@ -83,26 +83,28 @@ router.post("/login", (req, res) => {
     where: {
       email: req.body.email,
     },
-  }).then((dbUserData) => {
-    if (!dbUserData) {
-      res.status(400).json({ message: "No user found with this id" });
-      return;
-    }
+  })
+    .then((dbUserData) => {
+      if (!dbUserData) {
+        res.status(400).json({ message: "No user found with this id" });
+        return;
+      }
 
-    const validPassword = dbUserData.checkPassword(req.body.password);
-    if (!validPassword) {
-      res.status(400).json({ message: "Incorrect password!" });
-      return;
-    }
+      const validPassword = dbUserData.checkPassword(req.body.password);
+      if (!validPassword) {
+        res.status(400).json({ message: "Incorrect password!" });
+        return;
+      }
 
-    req.session.save(() => {
-      req.session.user_id = dbUserData.id;
-      req.session.firstName = dbUserData.firstName;
-      req.session.lastName = dbUserData.lastName;
-      req.session.loggedIn = true;
-      res.json({ user: dbUserData, message: "You are now logged in" });
-    });
-  });
+      req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.firstName = dbUserData.firstName;
+        req.session.lastName = dbUserData.lastName;
+        req.session.loggedIn = true;
+        res.json({ user: dbUserData, message: "You are now logged in" });
+      });
+    })
+    .then(res.render("dashboard"));
 });
 
 router.post("/logout", (req, res) => {
