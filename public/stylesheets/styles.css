@@ -1,14 +1,125 @@
+:root {
+  --primary-color: #21d4fd;
+  --secondary-color: #b721ff;
+  --tertiary-color: #2af598;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    background-color: #eeeeee;
+  background-color: #eeeeee;
+  font-family: "Varela Round", sans-serif;
+  text-align: center;
+}
+
+.logo-sm {
+  width: 50px;
+  height: 50px;
+}
+
+.nav-btn {
+  background: none !important;
+  border: none;
+  cursor: pointer;
+  color: var(--secondary-color)
+}
+
+h2 {
+  color: var(--primary-color);
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 32px;
+  margin: 0 0 72px;
+  text-align: center;
+}
+
+.new-app-form,.new-app-form label,.new-app-form input
+{
+  background-size: cover;
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-attachment: fixed;
+}
+
+
+.form-control 
+
+.btn.btn-primary {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password], input[type=url] {
+  width: 50%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  font-family: "Open Sans", sans-serif;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=url]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.container {
+  padding: 16px;
+}
+
+.form-title {
+color: var(--secondary-color);
+font-family: "Open Sans", sans-serif;
+font-size: 20px;
+font-weight: 300;
+line-height: 32px;
+margin: 0 0 72px;
+text-align: center;
+}
+
+.language-check {
+  color: var(--secondary-color);
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
   }
-  
-  .logo-sm {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .nav-btn {
-    background: none !important;
-    border: none;
-    cursor: pointer;
-  }
+
+ .application-list{
+  display: inline-flex;
+  justify-content: center;
+ } 
+
+ .application-list ol{
+  list-style: none;
+ }
+
+ .applications-info p {
+  color: #b721ff;
+ }
+ .job_title{
+  color: #21d4fd;
+ }
+
+ .edit-link{
+  background-color: lightblue;
+  padding: 10px;
+  text-decoration: none;
+ }
