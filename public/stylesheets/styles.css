@@ -1,14 +1,31 @@
+:root {
+  --primary-color: #21d4fd;
+  --secondary-color: #b721ff;
+  --tertiary-color: #2af598;
+}
+
 body {
-    background-color: #eeeeee;
-  }
-  
-  .logo-sm {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .nav-btn {
-    background: none !important;
-    border: none;
-    cursor: pointer;
-  }
+  background-color: #eeeeee;
+  font-family: "Varela Round", sans-serif;
+}
+
+.logo-sm {
+  width: 50px;
+  height: 50px;
+}
+
+.nav-btn {
+  background: none !important;
+  border: none;
+  cursor: pointer;
+}
+
+h2 {
+  color: var(--primary-color);
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 32px;
+  margin: 0 0 72px;
+  text-align: center;
+}
