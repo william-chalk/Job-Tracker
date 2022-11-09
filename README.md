@@ -51,7 +51,7 @@ An upload tool would allow for the user to keep track of each resume/CV/cover le
 
 # Deployed Application
 
-https://thegreatestjobtracker.herokuapp.com/login
+https://thebestjobtracker.herokuapp.com/login
 
 # Contributors
 
