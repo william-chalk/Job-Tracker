@@ -38,15 +38,13 @@ h2 {
   text-align: center;
 }
 
-.new-app-form 
+.new-app-form,.new-app-form label,.new-app-form input
 {
   background-size: cover;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   flex-wrap: wrap;
-  align-items: flex-start;
   background-attachment: fixed;
-  background-position: 80%;
 }
 
 
@@ -103,3 +101,25 @@ text-align: center;
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
   }
+
+ .application-list{
+  display: inline-flex;
+  justify-content: center;
+ } 
+
+ .application-list ol{
+  list-style: none;
+ }
+
+ .applications-info p {
+  color: #b721ff;
+ }
+ .job_title{
+  color: #21d4fd;
+ }
+
+ .edit-link{
+  background-color: lightblue;
+  padding: 10px;
+  text-decoration: none;
+ }
