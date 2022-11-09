@@ -3,10 +3,9 @@ const { User, Application, Interview } = require("../../models");
 const isAuthenticated = require("../../middleware/isAuthenticated");
 
 router.get("/", isAuthenticated, (req, res) => {
-  console.log(req.session.id);
   Application.findAll({
     where: {
-      user_id: req.session.id,
+      user_id: req.session.currentUser.id,
     },
     attributes: [
       "id",
@@ -25,16 +24,17 @@ router.get("/", isAuthenticated, (req, res) => {
       //       attributes: ["firstName", "lastName"],
       //     },
       //   },
-      {
-        model: User,
-        attributes: ["firstName", "lastName"],
-      },
+      // {
+      //   model: User,
+      //   attributes: ["firstName", "lastName"],
+      // },
     ],
   })
     .then((dbApplicationData) => {
       const applications = dbApplicationData.map((app) =>
         app.get({ plain: true })
       );
+      console.table(applications);
       res.render("dashboard", { applications, loggedIn: true });
     })
     .catch((err) => {

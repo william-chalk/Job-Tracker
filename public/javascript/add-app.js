@@ -1,5 +1,3 @@
-
-
 async function newFormHandler(event) {
   event.preventDefault();
 
@@ -8,23 +6,28 @@ async function newFormHandler(event) {
     'input[name="company_name"]'
   ).value;
   const app_url = document.querySelector('input[name="app_url"]').value;
-  const appLanguage = document.querySelector(".language-check:checked").value;
-
-
-
+  const selectedLangs = document.querySelectorAll(".language-check:checked");
+  const appLangs = "";
+  for (let i = 0; i < selectedLangs.length; i++) {
+    appLangs += selectedLangs[i].value;
+    if (i == selectedLangs.length - 1) {
+      appLangs += ", ";
+    }
+  }
   // const appStatus = document.querySelector('select[id="app_status"]').value;
 
   const response = await fetch(`api/applications`, {
     method: "POST",
     body: JSON.stringify({
+      user_id,
       job_title,
       company_name,
       app_url,
-      appLanguage,
+      appLangs,
       // appStatus,
     }),
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json",
     },
   });
 
@@ -34,8 +37,6 @@ async function newFormHandler(event) {
   } else {
     alert(response.statusText);
   }
-
-
 }
 
 document

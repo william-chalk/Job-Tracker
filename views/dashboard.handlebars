@@ -6,11 +6,12 @@
 {{> new-form}}
 </section>
 
-{{#if application.length}}
+{{!-- {{#if applications.length}} --}}
 <section>
   <h2>Your Applications</h2>
   <ol>
-    {{#each application as |application|}}
+  
+    {{#each applications as |application|}}
     <li>
       {{> applications-info application}}
       <a href="/dashboard/edit/{{application.id}}" class="edit-link">Edit application</a>
@@ -18,6 +19,6 @@
     {{/each}}
   </ol>
 </section>
-{{/if}}
+{{!-- {{/if}} --}}
 
 <script src="javascript/add-app.js"></script>
