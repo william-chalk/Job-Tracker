@@ -13,7 +13,7 @@ const app = express();
 const hbs = exphbs.create();
 
 const sessionConfig = {
-  secret: process.env.SESSION_SECRET,
+  secret: "process.env.SESSION_SECRET",
   cookie: {},
   resave: false,
   saveUninitialized: true,
