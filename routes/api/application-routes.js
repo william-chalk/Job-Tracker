@@ -57,7 +57,7 @@ router.post("/", isAuthenticated, (req, res) => {
     app_url: req.body.app_url,
     app_status: req.body.app_status,
     app_language: req.body.app_language,
-    user_id: req.session.user_id,
+    user_id: req.session.currentUser.id,
   })
     .then((dbAppData) => res.json(dbAppData))
     .catch((err) => {

@@ -17,7 +17,7 @@ router.post("/", isAuthenticated, (req, res) => {
     int_location: req.body.company_name,
     int_round: req.body.app_url,
     int_comments: req.body.app_status,
-    user_id: req.session.user_id,
+    user_id: req.session.currentUser.id,
   })
     .then((dbInterviewData) => res.json(dbInterviewData))
     .catch((err) => {

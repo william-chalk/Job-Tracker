@@ -1,1 +1,24 @@
-<h1 class="text-center mt-5">{{ welcomeMessage }}</h1>
+{{!-- Dashboard view - new posts + see all posts + make them clickable  --}}
+{{!-- {{> navbar}} --}}
+<section>
+  <h2>Enter a New Job Application</h2>
+{{!-- Parsley Goes Here (add css onclick to hide/unhide form) --}}
+{{> new-form}}
+</section>
+
+{{!-- {{#if applications.length}} --}}
+<section>
+  <h2>Your Applications</h2>
+  <ol>
+  
+    {{#each applications as |application|}}
+    <li>
+      {{> applications-info application}}
+      <a href="/dashboard/edit/{{application.id}}" class="edit-link">Edit application</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{!-- {{/if}} --}}
+
+<script src="javascript/add-app.js"></script>

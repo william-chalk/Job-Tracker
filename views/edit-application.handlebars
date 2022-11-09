@@ -1,0 +1,23 @@
+{{!-- <article>
+  <a href="/dashboard"> &larr; Back to dashboard</a>
+  <h2>
+    Edit Application Information
+  </h2>
+  {{!-- Parsley goes here ? I just left the exact code from Mod 14 for now --}}
+  <form class="edit-post-form">
+    <div>
+      <input name="post-title" type="text" value="{{post.title}}" />
+      <span>({{format_url post.post_url}})</span>
+    </div>
+    <div>
+       
+      |
+      <a href="/applications/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+    </div>
+    <button type="submit">Save Application</button>
+    <button type="button" class="delete-post-btn">Delete Application</button>
+  </form>
+</article>
+
+<script src="javascript/edit-post.js"></script>
+<script src="javascript/delete-post.js"></script> --}}

@@ -1,0 +1,9 @@
+<h1>Welcome to the Homepage</h1>
+
+<ol class="application-list">
+    {{#each application as application}}
+    <li>
+        {{>applications-info application}}
+    </li>
+    {{/each}}
+</ol>
