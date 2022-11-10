@@ -43,7 +43,7 @@ router.get("/", isAuthenticated, (req, res) => {
     });
 });
 
-router.get("/:id", isAuthenticated, (req, res) => {
+router.get("/edit/:id", isAuthenticated, (req, res) => {
   Application.findOne({
     where: {
       id: req.params.id,
@@ -87,6 +87,21 @@ router.get("/:id", isAuthenticated, (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+});
+
+//Adding this in to see if routing works
+router.delete("/edit/:id", isAuthenticated, (req, res) => {
+  Application.destroy({
+    where: {
+      id: req.params.id,
+    },
+  }).then((dbAppData) => {
+    if (!dbAppData) {
+      res.status(404).json({ message: "No application found with this id" });
+      return;
+    }
+    res.json(dbAppData);
+  });
 });
 
 module.exports = router;
