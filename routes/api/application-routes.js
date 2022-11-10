@@ -24,24 +24,24 @@ router.get("/:id", (req, res) => {
       "app_status",
       "app_language",
     ],
-    include: [
-      {
-        model: Interview,
-        attributes: [
-          "id",
-          "app_id",
-          "int_time",
-          "int_location",
-          "int_round",
-          "int_comments",
-          "user_id",
-        ],
-        include: {
-          model: User,
-          attributes: ["firstName", "lastName"],
-        },
-      },
-    ],
+    // include: [
+    //   {
+    //     model: Interview,
+    //     attributes: [
+    //       "id",
+    //       "app_id",
+    //       "int_time",
+    //       "int_location",
+    //       "int_round",
+    //       "int_comments",
+    //       "user_id",
+    //     ],
+    //     include: {
+    //       model: User,
+    //       attributes: ["firstName", "lastName"],
+    //     },
+    //   },
+    // ],
   })
     .then((dbAppData) => res.json(dbAppData))
     .catch((err) => {

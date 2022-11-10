@@ -15,3 +15,8 @@ async function deleteFormHandler(event) {
     alert(response.statusText);
   }
 }
+
+document
+  .querySelector("#delete-app-btn")
+  .addEventListener("submit", console.log("++++++++++++HELLO+++++++"));
+//deleteFormHandler);
