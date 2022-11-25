@@ -7,4 +7,5 @@ module.exports = {
   PageController,
   UserController,
   ApplicationController,
+  InterviewController
 };
