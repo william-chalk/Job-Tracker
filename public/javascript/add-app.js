@@ -33,7 +33,8 @@ async function newFormHandler(event) {
     document.location.replace("/dashboard");
     console.log(response.body);
   } else {
-    alert(response.statusText);
+    const parsedResponse = await response.json();
+    showToast({ message: parsedResponse.message });
   }
 }
 
