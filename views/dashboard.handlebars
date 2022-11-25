@@ -1,27 +1,28 @@
-{{!-- Dashboard view - new posts + see all posts + make them clickable  --}}
+{{!-- Dashboard view - new posts + see all posts + make them clickable --}}
 {{!-- {{> navbar}} --}}
-<section>
-  <h2>Enter a New Job Application</h2>
-{{!-- Parsley Goes Here (add css onclick to hide/unhide form) --}}
-{{> new-form}}
-</section>
+<div class="container">
+  <div class="row">
+    <section class="col-md-6">
+      <h2>Enter a New Job Application</h2>
+      {{!-- Parsley Goes Here (add css onclick to hide/unhide form) --}}
+      {{> new-form}}
+    </section>
 
-{{!-- {{#if applications.length}} --}}
-<section>
-  <h2 style="color: #b721ff;padding-top:15px;">Your Applications</h2>
-  <div class="application-list">
-  <ol>
-  
-    {{#each applications as |application|}}
-    <li>
-      {{> applications-info application}}
-      <a href="/dashboard/edit/{{application.id}}" class="edit-link">Edit application</a>
-    </li>
-    {{/each}}
-  </ol>
+    {{!-- {{#if applications.length}} --}}
+    <section class="col-md-6">
+      <h2 style="color: #b721ff;padding-top:15px;">Your Applications</h2>
+      <div class="application-list">
+        <ol>
+
+          {{#each applications as |application|}}
+          <li>
+            {{> applications-info application}}
+          </li>
+          {{/each}}
+        </ol>
+      </div>
+    </section>
   </div>
-</section>
+</div>
 {{!-- {{/if}} --}}
-
-<script src="javascript/add-app.js"></script>
 <script src="javascript/delete-app.js"></script>

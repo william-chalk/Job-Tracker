@@ -34,12 +34,11 @@ h2 {
   font-size: 30px;
   font-weight: 300;
   line-height: 32px;
-  margin: 0 0 72px;
+  margin: 1.25rem 0;
   text-align: center;
 }
 
-.new-app-form,.new-app-form label,.new-app-form input
-{
+.new-app-form, .new-app-form label, .new-app-form input {
   background-size: cover;
   display: inline-flex;
   justify-content: center;
@@ -48,9 +47,11 @@ h2 {
 }
 
 
-.form-control 
+.form-check {
+  text-align: left;
+}
 
-.btn.btn-primary {
+.form-control .btn.btn-primary {
   background-color: var(--secondary-color);
   color: white;
   padding: 16px 20px;
@@ -62,19 +63,18 @@ h2 {
 }
 
 .registerbtn:hover {
-  opacity:1;
+  opacity: 1;
 }
 
 /* Full-width input fields */
 input[type=text], input[type=password], input[type=url] {
-  width: 50%;
   padding: 15px;
-  margin: 5px 0 22px 0;
+  margin-bottom: 1rem;
   display: inline-block;
   border: none;
   background: #f1f1f1;
   font-family: "Open Sans", sans-serif;
-  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 }
 
 input[type=text]:focus, input[type=password]:focus, input[type=url]:focus {
@@ -86,40 +86,61 @@ input[type=text]:focus, input[type=password]:focus, input[type=url]:focus {
   padding: 16px;
 }
 
+.login-form,
+.registration-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.login-logo,
+.registration-logo {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
 .form-title {
-color: var(--secondary-color);
-font-family: "Open Sans", sans-serif;
-font-size: 20px;
-font-weight: 300;
-line-height: 32px;
-margin: 0 0 72px;
-text-align: center;
+  color: var(--secondary-color);
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 32px;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.parsley-errors-list.filled {
+  list-style: none;
+  color: red;
+  text-align: left;
+  padding: 0;
 }
 
 .language-check {
   color: var(--secondary-color);
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
-  }
+}
 
- .application-list{
+.application-list {
   display: inline-flex;
   justify-content: center;
- } 
+}
 
- .application-list ol{
+.application-list ol {
   list-style: none;
- }
+  padding: 0;
+}
 
- .applications-info p {
+.applications-info p {
   color: #b721ff;
- }
- .job_title{
-  color: #21d4fd;
- }
+}
 
- .edit-link{
+.job_title {
+  color: #21d4fd;
+}
+
+.edit-link {
   background-color: lightblue;
   padding: 10px;
   text-decoration: none;
- }
+}

@@ -1,21 +1,27 @@
-<article>
-  <a href="/dashboard"> &larr; Back to dashboard</a>
-  <h2>
-    Edit Application Information
-  </h2>
-  {{!-- Parsley goes here ? I just left the exact code from Mod 14 for now --}}
-  <form id="edit-app-form">
-    <div>
-      <input name="post-title" type="text" value="{{application.job_title}}" />
-      <span>({{application.app_url}})</span>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <article class="card p-3">
+        <a href="/dashboard"> &larr; Back to dashboard</a>
+        <h2>
+          Edit Application Information
+        </h2>
+        {{!-- Parsley goes here ? I just left the exact code from Mod 14 for now --}}
+        <form id="edit-app-form">
+          <div>
+            <input name="post-title" type="text" value="{{application.job_title}}" />
+            <span>({{application.app_url}})</span>
+          </div>
+          <div>
+
+          </div>
+          <button class="btn btn-success" type="submit">Save Application</button>
+          <button class="btn btn-danger" type="submit" id="delete-app-btn">Delete Application</button>
+        </form>
+      </article>
     </div>
-    <div>
-    
-    </div>
-    <button type="submit">Save Application</button>
-    <button type="submit" id="delete-app-btn">Delete Application</button>
-  </form>
-</article>
+  </div>
+</div>
 
 
-<script src="javascript/edit-app.js"></script>
+<script src="/javascript/edit-app.js"></script>
